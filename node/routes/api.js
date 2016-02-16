@@ -6,24 +6,25 @@ var router = express.Router();
 router.route('/pets')
   //create a new pet
   .post(function(req, res){
-    //create a new pet in the database
     res.send({message:"TODO create a new pet in the database"});
   })
+  //get all the pets in the database
   .get(function(req, res){
-    //get all the pets in the database
     res.send({message:"TODO get all the pets in the database"});
   });
 //api for a specfic pet
 router.route('/pets/:id')
-  //create
+  //update existing pet
   .put(function(req,res){
-      return res.send({message:'TODO modify an existing pet by using param ' + req.param.id});
+    res.send({message:'TODO modify an existing pet by using param ' + req.param.id});
   })
+  //get existing pet
   .get(function(req,res){
-      return res.send({message:'TODO get an existing pet by using param ' + req.param.id});
+    res.send({message:'TODO get an existing pet by using param ' + req.param.id});
   })
+  //delete existing pet
   .delete(function(req,res){
-      return res.send({message:'TODO delete an existing pet by using param ' + req.param.id});
+    res.send({message:'TODO delete an existing pet by using param ' + req.param.id});
   });
 
 module.exports = router;
