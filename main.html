@@ -13,9 +13,9 @@
     <div class="col-md-offset-2 col-md-8">
       <div class="clearfix">
         <form ng-submit='pet()'>
-          <input type="text" placeholder="Your name" ng-model='newPet.created_by' />
-          <textarea required maxlength="200" rows="3" placeholder="Pet's name" ng-model='newPet.name'></textarea>
-          <input class="button" type="submit" value="Add Pet" />
+          <input type="text" class='form-control' placeholder="Your name" ng-model='newPet.created_by' />
+          <textarea required class='form-control' maxlength="200" placeholder="Pet's name" ng-model='newPet.name'></textarea>
+          <input class="btn submit-btn pull-right" type="submit" value="Add Pet" />
         </form>
         <div id="pet-stream">
           <h4>Available Pets</h4>
