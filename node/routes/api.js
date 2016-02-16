@@ -7,11 +7,11 @@ router.route('/pets')
   //create a new pet
   .post(function(req, res){
     //create a new pet in the database
-    req.send({message:"TODO create a new pet in the database"});
+    res.send({message:"TODO create a new pet in the database"});
   })
   .get(function(req, res){
     //get all the pets in the database
-    req.send({message:"TODO get all the pets in the database"});
+    res.send({message:"TODO get all the pets in the database"});
   });
 //api for a specfic pet
 router.route('/pets/:id')
