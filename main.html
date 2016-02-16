@@ -1,11 +1,26 @@
-<!DOCTYPE html>
-<html lang="en" ng-app>
-<head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
-  <meta charset="UTF-8">
-  <title>All About Chew</title>
-</head>
-<body>
-
-</body>
+<!--main.html-->
+<!doctype html>
+<html>
+  <head>
+    <title>All About Chew</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="javascripts/allAboutChewApp.js"></script>
+  </head>
+  <body ng-app='allAboutChewApp'>
+    <div id='pet-create' ng-controller='mainController'>
+      <form ng-submit='pet()'>
+        <input type="text" placeholder="Your name" ng-model='newPet.created_by' />
+        <textarea required maxlength="200" rows="3" placeholder="Pet's name" ng-model='newPet.name'></textarea>
+        <input class="button" type="submit" value="Add Pet" />
+      </form>
+      <div id="pet-stream">
+        <h4>Available Pets</h4>
+          <!--to be populated by Angular-->
+          <div class='pet' ng-repeat="pet in pets | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
+            <p>{{pet.created_by}} posted {{pet.name}} at {{pet.created_at}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
