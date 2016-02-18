@@ -14,6 +14,9 @@ Node =
     bcrypt-nodejs for creating password hashes
 
 MongoDB - Document oriented database
-  Pet Document
-  User Document
-  
+  Pet Collection
+  User Collection
+
+TODO
+  MongoDB
+    -split up models
