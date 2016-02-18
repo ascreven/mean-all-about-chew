@@ -10,7 +10,7 @@ var api = require('./routes/api');
 var authenticate = require('./routes/authenticate')(passport);
 var mongoose = require('mongoose');
 // connect to mongodb
-mongoose.connect("mongodb://localhost:27012/allaboutchew");
+mongoose.connect("mongodb://localhost/allaboutchew");
 
 var app = express();
 
