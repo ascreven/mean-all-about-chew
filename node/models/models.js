@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 // create schema
 var userSchema = new mongoose.Schema({
-  username: String,
+  created_by: { type: Schema.ObjectId, ref: 'User' },
   password: String,
   created_at: {type: Date, default: Date.now}
 });
