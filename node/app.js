@@ -11,7 +11,7 @@ var api = require('./routes/api');
 var authenticate = require('./routes/authenticate')(passport);
 var mongoose = require('mongoose');
 // connect to mongodb
-mongoose.connect('mongodb://localhost/allaboutchew');
+mongoose.connect('mongodb://127.0.0.1:27017/allaboutchew');
 
 var app = express();
 
