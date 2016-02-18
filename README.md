@@ -12,3 +12,8 @@ Node =
     express-session for session middleware
     passport-local for local authentication
     bcrypt-nodejs for creating password hashes
+
+MongoDB - Document oriented database
+  Pet Document
+  User Document
+  
