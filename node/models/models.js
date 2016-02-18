@@ -18,8 +18,3 @@ var User = mongoose.model("User", userSchema);
 
 // declare petSchema model
 mongoose.model("Pet", petSchema);
-
-var firstUser = new User({
-  username: 'username',
-  password: 'password'
-});
