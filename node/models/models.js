@@ -8,7 +8,7 @@ var userSchema = new mongoose.Schema({
 });
 
 var petSchema = new mongoose.Schema({
-  created_by: { type: Schema.ObjectId, ref: 'User' },
+  created_by: { type: String, ref: 'User' },
   name: String,
   created_at: {type: Date, default: Date.now}
 });

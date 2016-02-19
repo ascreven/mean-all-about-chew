@@ -5,39 +5,40 @@ var mongoose = require('mongoose');
 var Pet = mongoose.model('Pet');
 
 
-router.use(function(req, res, next){
+function isAuthenticated(req, res, next){
   if(req.method === "GET"){
-    // you have to be authenticated user to make or delete pet
     return next();
   }
-  if(!req.isAuthenticated()){
-    // if you're not authenticated you're redirected to the login page
-    res.redirect('/#login');
+  if(req.isAuthenticated()){
+    return next();
   }
-  // user authenticated
-  return next();
-});
+  // if you're not authenticated you're redirected to the login page
+  return res.redirect('/#login');
+};
+
+router.use('/pets', isAuthenticated);
 //api for all pets
 router.route('/pets')
   //create a new pet
   .post(function(req, res){
     var pet = new Pet();
     pet.name = req.body.name;
-    pet.created_by = req.body.created_by;
-    pet.save(function(err, data){
+    pet.created_by = req.user.username;
+    pet.save(function(err, pet){
+      console.log(err);
       if(err){
         return res.send(500,err);
       }
-      return res.send(pet);
+      return res.json(pet);
     });
   })
   //get all the pets in the database
   .get(function(req, res){
-    Pet.find(function(err, data){
+    Pet.find(function(err, pets){
       if(err){
         return res.send(500, err);
       }
-      return res.send(data);
+      return res.send(pets);
     });
 
   });
@@ -49,13 +50,13 @@ router.route('/pets/:id')
       // return error if pet doesn't exist
       if(err)
         res.send(err);
-      pet.created_by = req.body.created_by;
+      // pet.created_by = req.body.created_by;
       pet.name = req.body.name;
 
       pet.save(function(err, pet){
         if(err)
           res.send(err);
-        res.json(post);
+        res.json(pet);
       });
     });
   })
@@ -64,7 +65,7 @@ router.route('/pets/:id')
     Pet.findById(req.params.id, function(err, pet){
       if(err)
         res.send(err);
-      res.json(post);
+      res.json(pet);
     });
   })
   //delete existing pet
@@ -72,7 +73,8 @@ router.route('/pets/:id')
     Pet.remove({
       _id: req.params.id
     }, function(err){
-      res.send(err);
+      if (err)
+        res.send(err);
       res.json('deleted');
     });
   });
