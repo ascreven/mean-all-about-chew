@@ -8,7 +8,7 @@
   <h4>Available Pets</h4>
   <!--to be populated by Angular-->
   <div class='pet' ng-repeat="pet in pets | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
-    <p>{{pet.name}}</p>
+    <a href='#/pets/{{pet.id}}'>{{pet.name}}</a>
     <small>Posted by {{pet.created_by}}</small>
     <small class="pull-right">{{pet.created_at | date:"h:mma 'on' MMM d, y"}}</small>
   </div>
