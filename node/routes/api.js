@@ -14,7 +14,7 @@ function isAuthenticated(req, res, next){
   }
   // if you're not authenticated you're redirected to the login page
   return res.redirect('/#login');
-};
+}
 
 router.use('/pets', isAuthenticated);
 //api for all pets

@@ -4,6 +4,7 @@
 angular
 .module('allAboutChewApp', [
   'ui.router',
+  'pets',
   // 'ngRoute',
   'ngResource'])
   .config([
@@ -16,12 +17,14 @@ function RouterFunction($stateProvider){
     .state('home', {
       url: '/',
       templateUrl: 'main.html',
-      controller: 'mainController'
+      controller: 'PetIndexController',
+      controllerAs: 'PetIndexViewModel'
     })
     .state('petShow', {
-      url: '/pets/:petId',
-      templateUrl: 'petShow.hmtl',
-      controller: 'petController'
+      url: '/pets/:id',
+      templateUrl: 'javascripts/pets/petShow.html',
+      controller: 'PetShowController',
+      controllerAs: 'PetShowViewModel'
     })
     .state('login', {
       url: '/login',
