@@ -8,9 +8,7 @@
     petIndexControllerFunction
   ]);
   function petIndexControllerFunction(PetFactory){
-    /* jshint validthis: true */
-    var vm = this;
-    vm.pets = PetFactory.query();
+    this.pets = PetFactory.query();
     // $scope.newPet = {created_by: '', text: '', created_at: ''};
     // $scope.pet = function(){
     //   $scope.newPet.created_by = $rootScope.current_user;
