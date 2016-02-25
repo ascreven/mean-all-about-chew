@@ -4,11 +4,12 @@
   .module("pets")
   .controller("PetShowController", [
     "PetFactory",
-    "$stateParams",
+    "$routeParams",
     PetShowControllerFunction
   ]);
 
-  function PetShowControllerFunction(PetFactory, $stateParams){
-    this.pet = PetFactory.get({id: $stateParams.id});
+  function PetShowControllerFunction(PetFactory, $routeParams){
+    this.pet = PetFactory.get({id: $routeParams.pet_id});
+    console.log(this.pet);
   }
 })();

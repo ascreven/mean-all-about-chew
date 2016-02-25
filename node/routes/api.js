@@ -43,10 +43,10 @@ router.route('/pets')
 
   });
 //api for a specfic pet
-router.route('/pets/:id')
+router.route('/pets/:pet_id')
   //update existing pet
   .put(function(req,res){
-    Pet.findById(req.params.id, function(err, pet){
+    Pet.findById(req.params.pet_id, function(err, pet){
       // return error if pet doesn't exist
       if(err)
         res.send(err);
@@ -62,7 +62,7 @@ router.route('/pets/:id')
   })
   //get existing pet
   .get(function(req,res){
-    Pet.findById(req.params.id, function(err, pet){
+    Pet.findById(req.params.pet_id, function(err, pet){
       if(err)
         res.send(err);
       res.json(pet);
