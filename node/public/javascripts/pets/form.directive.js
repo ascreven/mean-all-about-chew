@@ -3,7 +3,7 @@
   angular
   .module('pets')
   .directive('petForm', [
-    'petFactory',
+    'PetFactory',
     '$state',
     PetFormDirectiveFunction
   ]);
