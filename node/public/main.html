@@ -3,8 +3,10 @@
 <div id="pet-stream">
   <h4>Available Pets</h4>
   <!--to be populated by Angular-->
-  <div class='pet' data-ng-repeat="pet in PetIndexViewModel.pets | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
-    <a data-ui-sref='petShow({id: pet.pet_id})'>{{pet.name}}</a>
+  <div class='pet' data-ng-repeat="pet in pets | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
+    <a data-ui-sref='petShow({id: pet.id})'>{{pet.name}}</a>
+    <p>{{pet}}</p>
+    <p>{{pet.id}}</p>
     <small>Posted by {{pet.created_by}}</small>
     <small class="pull-right">{{pet.created_at | date:"h:mma 'on' MMM d, y"}}</small>
   </div>

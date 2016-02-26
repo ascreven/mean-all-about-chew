@@ -7,6 +7,6 @@
     FactoryFunction
   ]);
   function FactoryFunction($resource){
-    return $resource('/api/pets/:pet_id');
+    return $resource('/api/pets/:id');
   }
 })();

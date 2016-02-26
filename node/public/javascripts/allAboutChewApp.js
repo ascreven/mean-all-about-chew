@@ -17,8 +17,7 @@ function RouterFunction($stateProvider){
     .state('home', {
       url: '/',
       templateUrl: 'main.html',
-      controller: 'PetIndexController',
-      controllerAs: 'PetIndexViewModel'
+      controller: 'PetIndexController'
     })
     .state('petShow', {
       url: '/pets/:id',
