@@ -1,4 +1,4 @@
-var app = angular.module('allAboutChewApp', ['ngRoute', 'ngResource']).run(function($http, $rootScope){
+var app = angular.module('allAboutChewApp', ['ngRoute', 'ngResource']).run(function( $rootScope, $http){
   $rootScope.authenticated = false;
   $rootScope.current_user = '';
 
@@ -26,10 +26,10 @@ app.config(function($routeProvider){
 });
 
 app.factory('petService', function($resource){
-  return $resource('/api/pets/:id');
+  return $resource('api/pets/:id');
 });
 
-app.controller('mainController', function( $scope, petService, $rootScope ){
+app.controller('mainController', function($rootScope, $scope, petService){
   $scope.pets = petService.query();
   $scope.newPet = {created_by: '', text: '', created_at: ''};
 
