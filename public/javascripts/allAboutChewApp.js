@@ -10,6 +10,12 @@ angular
   .config([
     '$stateProvider',
     RouterFunction
+  ])
+  .run([
+    '$rootScope',
+    '$http',
+    '$location',
+    run
   ]);
 
 function RouterFunction($stateProvider){
@@ -37,16 +43,23 @@ function RouterFunction($stateProvider){
       controller: 'authController'
     });
 }
-})();
-  // .run(function($http, $rootScope){
-  // $rootScope.authenticated = false;
-  // $rootScope.current_user = '';
 
-//   $rootScope.signout = function(){
-//     $http.get('auth/signout');
-//     $rootScope.authenticated = false;
-//     $rootScope.current_user = '';
-//   };
+function run($rootScope, $http, $location){
+  $rootScope.authenticated = false;
+  $rootScope.current_user = '';
+
+  $rootScope.signout = function(){
+    $http.get('auth/signout');
+    $rootScope.authenticated = false;
+    $rootScope.current_user = '';
+    $location.path('/#/');
+  };
+}
+})();
+
+
+  // .run(function($http, $rootScope){
+
 // });
 
 // app.config(function($routeProvider){
