@@ -5,6 +5,7 @@ angular
 .module('allAboutChewApp', [
   'ui.router',
   'pets',
+  'auth',
   'ngResource'])
   .config([
     '$stateProvider',
@@ -27,12 +28,12 @@ function RouterFunction($stateProvider){
     })
     .state('login', {
       url: '/login',
-      templateUrl: 'login.html',
+      templateUrl: 'javascripts/auth/login.html',
       controller: 'authController'
     })
     .state('signup', {
       url: '/register',
-      templateUrl: 'register.html',
+      templateUrl: 'javascripts/auth/register.html',
       controller: 'authController'
     });
 }
