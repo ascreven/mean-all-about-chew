@@ -5,12 +5,13 @@
   angular
   .module('pets')
   .controller('PetIndexController', [
+    '$scope',
     'PetFactory',
     petIndexControllerFunction
   ]);
-  function petIndexControllerFunction( PetFactory){
+  function petIndexControllerFunction( $scope, PetFactory){
     /*jshint validthis: true */
-    this.pets = PetFactory.query();
+    $scope.pets = PetFactory.query();
     // $scope.pet = PetFactory.get($stateParams.id);
     // $scope.newPet = {created_by: '', text: '', created_at: ''};
     // $scope.pet = function(){

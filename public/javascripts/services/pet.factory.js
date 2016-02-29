@@ -7,6 +7,6 @@
     FactoryFunction
   ]);
   function FactoryFunction($resource){
-    return $resource('http://localhost:3000/api/pets/:id', {id: '@id'});
+    return $resource('/api/pets/:id', {id: '@id'});
   }
 })();

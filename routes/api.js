@@ -44,14 +44,23 @@ router.route('/pets')
   });
 //api for a specfic pet
 router.route('/pets/:id')
+//get existing pet
+.get(function(req,res, next){
+  Pet.findById(req.params.id, function(err, pet){
+    if(err)
+      return next(err);
+    res.json(pet);
+  });
+})
   //update existing pet
-  .put(function(req,res){
+  .put(function(req,res, next){
     Pet.findById(req.params.id, function(err, pet){
       // return error if pet doesn't exist
       if(err)
         res.send(err);
       // pet.created_by = req.body.created_by;
-      pet.name = req.body.name;
+      // pet.name = req.body.name;
+      res.json(pet);
 
       pet.save(function(err, pet){
         if(err)
@@ -60,14 +69,7 @@ router.route('/pets/:id')
       });
     });
   })
-  //get existing pet
-  .get(function(req,res){
-    Pet.findById(req.params.id, function(err, pet){
-      if(err)
-        res.send(err);
-      res.json(pet);
-    });
-  })
+
   //delete existing pet
   .delete(function(req,res){
     Pet.remove({

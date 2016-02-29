@@ -3,14 +3,16 @@
   angular
   .module("pets")
   .controller("PetShowController", [
+    '$scope',
+    '$routeParams',
     "PetFactory",
-    "$stateParams",
     PetShowControllerFunction
   ]);
 
-  function PetShowControllerFunction(PetFactory, $stateParams){
-    this.pet = PetFactory.get({id: '56c7aea8f438e80f4826e334'})
-    console.log($stateParams)
-    // var pet = PetFactory.get({ id: $scope.id})
+    function PetShowControllerFunction($scope, $routeParams, PetFactory){
+    this.pet = PetFactory.get({id: $routeParams.id})
+    // $scope.pet = PetFactory[$routeParams.id];
+    console.log($routeParams)
+    // $scope.pet = PetFactory.get({ id: $scope.id})
   }
 })();

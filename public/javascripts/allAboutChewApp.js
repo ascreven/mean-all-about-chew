@@ -4,8 +4,9 @@
 angular
 .module('allAboutChewApp', [
   'ui.router',
-  'pets',
-  'ngResource'])
+  'ngResource',
+  'pets'
+])
   .config([
     '$stateProvider',
     RouterFunction
@@ -20,10 +21,9 @@ function RouterFunction($stateProvider){
       controllerAs: 'PetIndexViewModel'
     })
     .state('petShow', {
-      url: '/pets/{id}',
+      url: '/{id}',
       templateUrl: 'javascripts/pets/petShow.html',
-      controller: 'PetShowController',
-      controllerAs: 'PetShowViewModel'
+      controller: 'PetShowController'
     })
     .state('login', {
       url: '/login',
