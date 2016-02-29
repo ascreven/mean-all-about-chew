@@ -11,6 +11,19 @@ var petSchema = new mongoose.Schema({
   created_by: { type: String, ref: 'User' },
   name: String,
   created_at: {type: Date, default: Date.now}
+},{
+  versionKey: false,
+  toJSON: {
+    virtuals: true,
+    transform: function(doc, ret, options) {
+      ret.id = ret._id.toHexString();
+      delete ret._id;
+    }
+  },
+
+  toObject: {
+    virtuals: true
+  }
 });
 
 // declare userSchema model

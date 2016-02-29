@@ -21,13 +21,13 @@ angular
 function RouterFunction($stateProvider){
     $stateProvider
     .state('home', {
-      url: '/',
+      url: '/pets',
       templateUrl: 'javascripts/pets/main.html',
       controller: 'PetIndexController',
       controllerAs: 'PetIndexViewModel'
     })
     .state('petShow', {
-      url: '/pets/{id}',
+      url: '/pets/:id',
       templateUrl: 'javascripts/pets/petShow.html',
       controller: 'PetShowController',
       controllerAs: 'PetShowViewModel'

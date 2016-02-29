@@ -10,7 +10,6 @@
     authControllerFunction
   ]);
   function authControllerFunction( $scope, $http, $rootScope, $location ){
-    console.log('hello');
       $scope.user = {username: '', password: ''};
       $scope.error_message = '';
 
@@ -19,7 +18,7 @@
           if(data.state == 'success'){
             $rootScope.authenticated = true;
             $rootScope.current_user = data.user.username;
-            $location.path('/');
+            $location.path('/pets');
           }
           else{
             $scope.error_message = data.message;
@@ -32,7 +31,7 @@
           if(data.state == 'success'){
             $rootScope.authenticated = true;
             $rootScope.current_user = data.user.username;
-            $location.path('/');
+            $location.path('/pets');
           }
           else{
             $scope.error_message = data.message;

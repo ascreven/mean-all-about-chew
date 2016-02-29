@@ -7,6 +7,12 @@
     FactoryFunction
   ]);
   function FactoryFunction($resource){
-    return $resource('http://localhost:3000/api/pets/:id', {id: '@id'});
+    var resource =  $resource('/api/pets/:id', null, {
+      listPets: {
+        method: 'GET',
+        isArray: true
+      }
+    });
+    return resource;
   }
 })();
