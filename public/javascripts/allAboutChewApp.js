@@ -23,14 +23,12 @@ function RouterFunction($stateProvider){
     .state('home', {
       url: '/pets',
       templateUrl: 'javascripts/pets/main.html',
-      controller: 'PetIndexController',
-      controllerAs: 'PetIndexViewModel'
+      controller: 'PetIndexController'
     })
     .state('petShow', {
       url: '/pets/:id',
       templateUrl: 'javascripts/pets/petShow.html',
-      controller: 'PetShowController',
-      controllerAs: 'PetShowViewModel'
+      controller: 'PetShowController'
     })
     .state('login', {
       url: '/login',

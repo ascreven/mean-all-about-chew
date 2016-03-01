@@ -1,5 +1,8 @@
-<div data-pet-form data-pet="PetIndexViewModel.newPet"></div>
-
+  <form ng-Submit='pet()' ng-show='authenticated'>
+    <h1>Hi</h1>
+    <textarea required class="form-control" placeholder="Pet Name" ng-model="newPet.name"></textarea>
+    <input class="btn submit-btn pull-right" type="submit" value="Add Pet" />
+  </form>
 <div id="pet-stream">
   <h4>Available Pets</h4>
   <!--to be populated by Angular-->
