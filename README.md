@@ -27,6 +27,8 @@ MongoDB - Document oriented database
 
 To Do:
   Finish edit and delete
+  Forms
+  Clean it up
   Add Petfinder API
   User Interface
   Search
