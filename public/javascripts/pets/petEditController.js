@@ -15,5 +15,8 @@
     $scope.update = function(){
       $scope.pet.$update({id: $stateParams.id});
     };
+    $scope.delete = function(){
+      $scope.pet.$delete({id: $stateParams.id});
+    };
   }
 })();
