@@ -11,6 +11,9 @@
       listPets: {
         method: 'GET',
         isArray: true
+      },
+      update: {
+        method: 'PUT'
       }
     });
     return resource;

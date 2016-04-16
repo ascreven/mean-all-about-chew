@@ -30,6 +30,11 @@ function RouterFunction($stateProvider){
       templateUrl: 'javascripts/pets/petShow.html',
       controller: 'PetShowController'
     })
+    .state('petEdit', {
+      url: 'pets/:id/edit',
+      templateUrl: 'javascripts/pets/petEdit.html',
+      controller: 'PetEditController'
+    })
     .state('login', {
       url: '/login',
       templateUrl: 'javascripts/auth/login.html',

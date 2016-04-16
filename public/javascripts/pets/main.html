@@ -8,6 +8,7 @@
   <!--to be populated by Angular-->
   <div class='pet' data-ng-repeat="pet in pets | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
     <p><a data-ui-sref='petShow({id: pet.id})'>{{pet.name}}</a></p>
+    <p><a data-ui-sref='petEdit({id: pet.id})'>Edit {{pet.name}}</a></p>
     <p>{{pet}}</p>
     <p>{{pet.id}}</p>
     <small>Posted by {{pet.created_by}}</small>
