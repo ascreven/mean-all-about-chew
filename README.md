@@ -26,10 +26,11 @@ MongoDB - Document oriented database
   User Collection
 
 To Do:
-  Finish edit and delete
+  Mobile view
   Forms
   Clean it up
   Add Petfinder API
+   Add pet info to database
   User Interface
   Search
 
