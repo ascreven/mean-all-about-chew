@@ -10,9 +10,10 @@
     '$rootScope',
     petIndexControllerFunction
   ]);
-  function petIndexControllerFunction( $scope, PetFactory, $rootScope){
+  function petIndexControllerFunction( $scope, PetFactory,  $rootScope){
     /*jshint validthis: true */
-    $scope.pets = PetFactory
+      $scope.pets = PetFactory.query()
+
       $scope.newPet = {created_by: '', name: '', created_at: ''};
 
       $scope.pet = function(){
