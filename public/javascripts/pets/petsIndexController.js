@@ -12,7 +12,7 @@
   ]);
   function petIndexControllerFunction( $scope, PetFactory, $rootScope){
     /*jshint validthis: true */
-    $scope.pets = PetFactory.listPets();
+    $scope.pets = PetFactory
       $scope.newPet = {created_by: '', name: '', created_at: ''};
 
       $scope.pet = function(){
